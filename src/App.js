@@ -84,19 +84,15 @@ class App extends React.Component {
       mapUrl
     } = this.state;
     return (
-      <>
+      <div className={styles.App}>
         {currentWeatherDataLoaded && (
           <CurrentWeather currentWeather={currentWeather} />
         )}
         {weatherForecastDataLoaded && (
           <WeatherForecast weatherForecast={weatherForecast} />
         )}
-        {mapUrl && (
-          <div className={styles.App}>
-            <Map mapUrl={mapUrl} />
-          </div>
-        )}
-      </>
+        {mapUrl && <Map mapUrl={mapUrl} />}
+      </div>
     );
   }
 }
