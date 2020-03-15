@@ -10,27 +10,29 @@ class App extends React.Component {
   };
 
   async fetchApiData() {
+    let apiCallDuration = 3000;
     const weatherApiUrl = weatherApiUrlRoot + apiKey_OpenWeatherMaps;
     console.log(`*************************************************`);
     console.log(`fetching OpenWeatherMap API data: ${weatherApiUrl}`);
     console.log(`*************************************************`);
-    await fetch(weatherApiUrl)
-      .then(response => {
-        return response.json();
-      })
-      .then(data => {
-        console.log(`#################################################`);
-        console.log(data);
-        console.log(`#################################################`);
-        this.setState({
-          dataLoaded: true,
-          data
+    await setTimeout(() => {
+      fetch(weatherApiUrl)
+        .then(response => {
+          return response.json();
+        })
+        .then(data => {
+          console.log(`#################################################`);
+          console.log(data);
+          console.log(`#################################################`);
+          this.setState({
+            dataLoaded: true,
+            data
+          });
         });
-      });
+    }, apiCallDuration);
   }
 
   componentDidMount() {
-    let apiCallDuration = 3000;
     console.log(`=================================================`);
     console.log(`*** App: componentDidMount() ***`);
     console.log(`-------------------------------------------------`);
