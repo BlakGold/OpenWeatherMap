@@ -1,5 +1,4 @@
 import React from "react";
-import Map from "./components/Map";
 import CurrentWeather from "./components/CurrentWeather";
 import WeatherForecast from "./components/WeatherForecast";
 import {
@@ -15,8 +14,7 @@ class App extends React.Component {
     currentWeather: {},
     weatherForecast: {},
     currentWeatherDataLoaded: false,
-    weatherForecastDataLoaded: false,
-    mapUrl: `${mapApiUrlRoot}${apiKey_OpenWeatherMaps}`
+    weatherForecastDataLoaded: false
   };
 
   async fetchApiData() {
@@ -80,8 +78,7 @@ class App extends React.Component {
       currentWeather,
       currentWeatherDataLoaded,
       weatherForecast,
-      weatherForecastDataLoaded,
-      mapUrl
+      weatherForecastDataLoaded
     } = this.state;
     return (
       <div className={styles.App}>
