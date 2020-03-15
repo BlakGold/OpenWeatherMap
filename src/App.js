@@ -1,11 +1,13 @@
 import React from "react";
-import "./App.scss";
+import styles from "./App.module.scss";
+import Map from "./components/Map";
 
 function App() {
   return (
-    <div className="App">
+    <div className={styles.App}>
       <h1>OpenWeatherMap</h1>
       <p>A demo of OpenWeatherMap API.</p>
+      <Map />
     </div>
   );
 }
