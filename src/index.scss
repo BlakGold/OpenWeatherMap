@@ -1,15 +1,25 @@
-$headerFontFamily: freight-big-pro, serif;
-$headerTextColor: rgb(74, 74, 74);
-$headerFontWeight: 700;
+$headingFontFamily: freight-big-pro, serif;
+$headingFontWeight: 700;
+$headingTextColor: rgb(74, 74, 74);
 $bodyFontFamily: freight-sans-pro, helvetica, sans-serif;
-$bodyTextColor: rgb(17, 17, 17);
 $bodyFontWeight: 300;
+$bodyTextColor: rgb(17, 17, 17);
 
-body {
-  margin: 0;
+@mixin headingFontStyles {
+  font-family: $headingFontFamily;
+  font-weight: $headingFontWeight;
+  color: $headingTextColor;
+}
+
+@mixin bodyFontStyles {
   font-family: $bodyFontFamily;
   font-weight: $bodyFontWeight;
   color: $bodyTextColor;
+}
+
+body {
+  @include bodyFontStyles;
+  margin: 0;
 }
 
 h1,
@@ -18,7 +28,5 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $headerFontFamily;
-  font-weight: $headerFontWeight;
-  color: $headerTextColor;
+  @include headingFontStyles;
 }
