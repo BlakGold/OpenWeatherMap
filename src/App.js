@@ -2,34 +2,54 @@ import React from "react";
 import Map from "./components/Map";
 import {
   mapApiUrlRoot,
-  weatherApiUrlRoot,
+  currentWeatherApiUrlRoot,
+  weatherForecastApiUrlRoot,
   apiKey_OpenWeatherMaps
 } from "./globals/constants";
 import styles from "./App.scss";
 
 class App extends React.Component {
   state = {
-    data: {},
-    dataLoaded: false,
+    currentWeather: {},
+    weatherForecast: {},
+    currentWeatherDataLoaded: false,
+    weatherForecastDataLoaded: false,
     mapUrl: `${mapApiUrlRoot}${apiKey_OpenWeatherMaps}`
   };
 
   async fetchApiData() {
-    const weatherApiUrl = weatherApiUrlRoot + apiKey_OpenWeatherMaps;
+    const currentWeatherApiUrl =
+      currentWeatherApiUrlRoot + apiKey_OpenWeatherMaps;
+    const weatherForecastApiUrl =
+      weatherForecastApiUrlRoot + apiKey_OpenWeatherMaps;
     console.log(`*************************************************`);
-    console.log(`fetching OpenWeatherMap API data: ${weatherApiUrl}`);
+    console.log(`fetching OpenWeatherMap API data: ${currentWeatherApiUrl}`);
+    console.log(`fetching OpenWeatherMap API data: ${weatherForecastApiUrl}`);
     console.log(`*************************************************`);
-    await fetch(weatherApiUrl)
+    await fetch(currentWeatherApiUrl)
       .then(response => {
         return response.json();
       })
-      .then(data => {
+      .then(currentWeather => {
         console.log(`#################################################`);
-        console.log(data);
+        console.log(currentWeather);
         console.log(`#################################################`);
         this.setState({
-          dataLoaded: true,
-          data
+          currentWeatherDataLoaded: true,
+          currentWeather
+        });
+      });
+    await fetch(weatherForecastApiUrl)
+      .then(response => {
+        return response.json();
+      })
+      .then(weatherForecast => {
+        console.log(`#################################################`);
+        console.log(weatherForecast);
+        console.log(`#################################################`);
+        this.setState({
+          weatherForecastDataLoaded: true,
+          weatherForecast
         });
       });
   }
@@ -54,12 +74,23 @@ class App extends React.Component {
   }
 
   render() {
-    const { data, dataLoaded, mapUrl } = this.state;
+    const {
+      currentWeather,
+      currentWeatherDataLoaded,
+      weatherForecast,
+      weatherForecastDataLoaded,
+      mapUrl
+    } = this.state;
     return (
       <>
-        <div className={styles.data}>{JSON.stringify(data)}</div>
+        {currentWeatherDataLoaded && (
+          <div className={styles.data}>{JSON.stringify(currentWeather)}</div>
+        )}
+        {weatherForecastDataLoaded && (
+          <div className={styles.data}>{JSON.stringify(weatherForecast)}</div>
+        )}
         <div className={styles.App}>
-          {dataLoaded && <Map mapUrl={mapUrl} />}
+          <Map mapUrl={mapUrl} />
         </div>
       </>
     );
