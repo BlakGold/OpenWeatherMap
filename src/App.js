@@ -91,7 +91,6 @@ class App extends React.Component {
         {weatherForecastDataLoaded && (
           <WeatherForecast weatherForecast={weatherForecast} />
         )}
-        {mapUrl && <Map mapUrl={mapUrl} />}
       </div>
     );
   }
