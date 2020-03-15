@@ -6,15 +6,3 @@
   width: 100%;
   height: 100%;
 }
-
-$dataBackgroundColor: rgba(74, 74, 74, 0.21);
-.data {
-  position: absolute;
-  display: flex;
-  border: 0;
-  padding: 0;
-  width: 100%;
-  height: auto;
-  bottom: 0;
-  background: $dataBackgroundColor;
-}

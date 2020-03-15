@@ -1,5 +1,7 @@
 import React from "react";
 import Map from "./components/Map";
+import CurrentWeather from "./components/CurrentWeather";
+import WeatherForecast from "./components/WeatherForecast";
 import {
   mapApiUrlRoot,
   currentWeatherApiUrlRoot,
@@ -84,14 +86,16 @@ class App extends React.Component {
     return (
       <>
         {currentWeatherDataLoaded && (
-          <div className={styles.data}>{JSON.stringify(currentWeather)}</div>
+          <CurrentWeather currentWeather={currentWeather} />
         )}
         {weatherForecastDataLoaded && (
-          <div className={styles.data}>{JSON.stringify(weatherForecast)}</div>
+          <WeatherForecast weatherForecast={weatherForecast} />
         )}
-        <div className={styles.App}>
-          <Map mapUrl={mapUrl} />
-        </div>
+        {mapUrl && (
+          <div className={styles.App}>
+            <Map mapUrl={mapUrl} />
+          </div>
+        )}
       </>
     );
   }
