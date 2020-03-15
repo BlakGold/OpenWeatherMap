@@ -10,14 +10,13 @@ import styles from "./App.scss";
 class App extends React.Component {
   state = {
     data: {},
-    dataLoaded: false
+    dataLoaded: false,
+    mapUrl: `${mapApiUrlRoot}${apiKey_OpenWeatherMaps}`
   };
 
   async fetchApiData() {
-    const mapApiUrl = mapApiUrlRoot + apiKey_OpenWeatherMaps;
     const weatherApiUrl = weatherApiUrlRoot + apiKey_OpenWeatherMaps;
     console.log(`*************************************************`);
-    console.log(`fetching OpenWeatherMap API data: ${mapApiUrl}`);
     console.log(`fetching OpenWeatherMap API data: ${weatherApiUrl}`);
     console.log(`*************************************************`);
     await fetch(weatherApiUrl)
@@ -55,8 +54,15 @@ class App extends React.Component {
   }
 
   render() {
-    const { dataLoaded } = this.state;
-    return <div className={styles.App}>{dataLoaded && <Map />}</div>;
+    const { data, dataLoaded, mapUrl } = this.state;
+    return (
+      <>
+        <div className={styles.data}>{JSON.stringify(data)}</div>
+        <div className={styles.App}>
+          {dataLoaded && <Map mapUrl={mapUrl} />}
+        </div>
+      </>
+    );
   }
 }
 
