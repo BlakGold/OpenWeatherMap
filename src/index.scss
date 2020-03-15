@@ -1,3 +1,24 @@
+$headerFontFamily: freight-big-pro, serif;
+$headerTextColor: rgb(74, 74, 74);
+$headerFontWeight: 700;
+$bodyFontFamily: freight-sans-pro, helvetica, sans-serif;
+$bodyTextColor: rgb(17, 17, 17);
+$bodyFontWeight: 300;
+
 body {
   margin: 0;
+  font-family: $bodyFontFamily;
+  font-weight: $bodyFontWeight;
+  color: $bodyTextColor;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $headerFontFamily;
+  font-weight: $headerFontWeight;
+  color: $headerTextColor;
 }
