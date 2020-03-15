@@ -1,6 +1,10 @@
 import React from "react";
 import Map from "./components/Map";
-import { weatherApiUrlRoot, apiKey_OpenWeatherMaps } from "./globals/constants";
+import {
+  mapApiUrlRoot,
+  weatherApiUrlRoot,
+  apiKey_OpenWeatherMaps
+} from "./globals/constants";
 import styles from "./App.scss";
 
 class App extends React.Component {
@@ -10,8 +14,10 @@ class App extends React.Component {
   };
 
   async fetchApiData() {
+    const mapApiUrl = mapApiUrlRoot + apiKey_OpenWeatherMaps;
     const weatherApiUrl = weatherApiUrlRoot + apiKey_OpenWeatherMaps;
     console.log(`*************************************************`);
+    console.log(`fetching OpenWeatherMap API data: ${mapApiUrl}`);
     console.log(`fetching OpenWeatherMap API data: ${weatherApiUrl}`);
     console.log(`*************************************************`);
     await fetch(weatherApiUrl)
