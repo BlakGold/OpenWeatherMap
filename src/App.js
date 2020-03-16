@@ -22,18 +22,18 @@ class App extends React.Component {
       currentWeatherApiUrlRoot + apiKey_OpenWeatherMaps;
     const weatherForecastApiUrl =
       weatherForecastApiUrlRoot + apiKey_OpenWeatherMaps;
-    console.log(`*************************************************`);
-    console.log(`fetching OpenWeatherMap API data: ${currentWeatherApiUrl}`);
-    console.log(`fetching OpenWeatherMap API data: ${weatherForecastApiUrl}`);
-    console.log(`*************************************************`);
+    //console.log(`*************************************************`);
+    //console.log(`fetching OpenWeatherMap API data: ${currentWeatherApiUrl}`);
+    //console.log(`fetching OpenWeatherMap API data: ${weatherForecastApiUrl}`);
+    //console.log(`*************************************************`);
     await fetch(currentWeatherApiUrl)
       .then(response => {
         return response.json();
       })
       .then(currentWeather => {
-        console.log(`#################################################`);
-        console.log(currentWeather);
-        console.log(`#################################################`);
+        //console.log(`#################################################`);
+        //console.log(currentWeather);
+        //console.log(`#################################################`);
         this.setState({
           currentWeatherDataLoaded: true,
           currentWeather
@@ -44,9 +44,9 @@ class App extends React.Component {
         return response.json();
       })
       .then(weatherForecast => {
-        console.log(`#################################################`);
-        console.log(weatherForecast);
-        console.log(`#################################################`);
+        //console.log(`#################################################`);
+        //console.log(weatherForecast);
+        //console.log(`#################################################`);
         this.setState({
           weatherForecastDataLoaded: true,
           weatherForecast
@@ -55,22 +55,22 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    console.log(`=================================================`);
-    console.log(`*** App: componentDidMount() ***`);
-    console.log(`-------------------------------------------------`);
-    console.log(this.state);
-    console.log(`-------------------------------------------------`);
-    console.log(`=================================================`);
+    //console.log(`=================================================`);
+    //console.log(`*** App: componentDidMount() ***`);
+    //console.log(`-------------------------------------------------`);
+    //console.log(this.state);
+    //console.log(`-------------------------------------------------`);
+    //console.log(`=================================================`);
     this.fetchApiData();
   }
 
   componentDidUpdate() {
-    console.log(`=================================================`);
-    console.log(`*** App: componentDidUpdate() ***`);
-    console.log(`-------------------------------------------------`);
-    console.log(this.state);
-    console.log(`-------------------------------------------------`);
-    console.log(`=================================================`);
+    //console.log(`=================================================`);
+    //console.log(`*** App: componentDidUpdate() ***`);
+    //console.log(`-------------------------------------------------`);
+    //console.log(this.state);
+    //console.log(`-------------------------------------------------`);
+    //console.log(`=================================================`);
   }
 
   render() {
