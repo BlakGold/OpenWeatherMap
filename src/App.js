@@ -2,7 +2,6 @@ import React from "react";
 import CurrentWeather from "./components/CurrentWeather";
 import WeatherForecast from "./components/WeatherForecast";
 import {
-  mapApiUrlRoot,
   currentWeatherApiUrlRoot,
   weatherForecastApiUrlRoot,
   apiKey_OpenWeatherMaps
@@ -19,9 +18,17 @@ class App extends React.Component {
 
   async fetchApiData() {
     const currentWeatherApiUrl =
-      currentWeatherApiUrlRoot + apiKey_OpenWeatherMaps;
+      currentWeatherApiUrlRoot +
+      "?id=" +
+      2172797 +
+      "&appid=" +
+      apiKey_OpenWeatherMaps;
     const weatherForecastApiUrl =
-      weatherForecastApiUrlRoot + apiKey_OpenWeatherMaps;
+      weatherForecastApiUrlRoot +
+      "?id=" +
+      2172797 +
+      "&mode=json&appid=" +
+      apiKey_OpenWeatherMaps;
     //console.log(`*************************************************`);
     //console.log(`fetching OpenWeatherMap API data: ${currentWeatherApiUrl}`);
     //console.log(`fetching OpenWeatherMap API data: ${weatherForecastApiUrl}`);
