@@ -1,4 +1,5 @@
 import React from "react";
+import Icon from "../Icon";
 import styles from "./index.scss";
 import { toFahrenheit } from "../../globals/functions";
 
@@ -20,10 +21,10 @@ function CurrentWeather(props) {
         <span className={styles.city}>{currentWeather.name}</span>
       </h1>
       <div className={styles.description}>{weather.description}</div>
-      <img
+      <Icon
         alt={weather.description}
         title={weather.description}
-        src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`}
+        icon={weather.icon}
       />
       <div className={styles.temp}>{toFahrenheit(main.temp)}&deg;</div>
     </div>

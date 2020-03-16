@@ -1,17 +1,15 @@
 import React from "react";
+import { iconUrlTemplate, iconField } from "../../globals/constants";
 import styles from "./index.scss";
 
-function WeatherForecast(props) {
-  const { weatherForecast } = props;
+function Icon(props) {
+  const { icon, alt, title } = props;
+  const iconUrl = iconUrlTemplate.replace(iconField, icon);
   console.log(`*************************************************`);
-  console.log(`weatherForecast`);
-  console.log(weatherForecast);
+  console.log(`Icon`);
+  console.log(iconUrl);
   console.log(`*************************************************`);
-  return (
-    <div className={styles.data}>
-      <h1>Weather Forecast</h1>
-    </div>
-  );
+  return <img className={styles.icon} alt={alt} title={title} src={iconUrl} />;
 }
 
-export default WeatherForecast;
+export default Icon;
