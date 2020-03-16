@@ -1,7 +1,7 @@
 import React from "react";
 import Icon from "../Icon";
-import styles from "./index.scss";
 import { toFahrenheit } from "../../globals/functions";
+import styles from "./index.scss";
 
 function CurrentWeather(props) {
   const { currentWeather } = props;

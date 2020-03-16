@@ -1,7 +1,17 @@
 .data {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   border: 0;
   padding: 0;
+}
+
+.timeFrame {
+  display: flex;
+  align-items: center;
+}
+
+.temp {
+  font-size: 35px;
+  margin: 0 14px;
 }
