@@ -1,11 +1,17 @@
-$dataBackgroundColor: rgba(74, 74, 74, 0.21);
+$njBrown: #8d734a;
+
 .data {
-  position: absolute;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   border: 0;
   padding: 0;
-  width: 100%;
-  height: auto;
-  bottom: 0;
-  background: $dataBackgroundColor;
+}
+
+.city {
+  color: $njBrown;
+}
+
+.temp {
+  font-size: 49px;
 }

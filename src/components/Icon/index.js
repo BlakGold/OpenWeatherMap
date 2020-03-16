@@ -9,7 +9,7 @@ function WeatherForecast(props) {
   console.log(`*************************************************`);
   return (
     <div className={styles.data}>
-      <h1>5-Day Weather Forecast</h1>
+      <h1>Weather Forecast</h1>
     </div>
   );
 }
