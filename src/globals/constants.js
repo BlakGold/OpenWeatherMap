@@ -1,3 +1,6 @@
+const US = "US";
+const cityId_WashingtonDC = 4140963;
+
 const apiKey_OpenWeatherMaps = "f81d9bcbe8e93533a28127f5134aa81a";
 
 //const mapApiUrlRoot = "https://tile.openweathermap.org/map/"; // temp_new/3/7/7.png?appid=
@@ -14,6 +17,8 @@ const iconUrlTemplate =
   "http://openweathermap.org/img/wn/" + iconField + "@2x.png";
 
 export {
+  US,
+  cityId_WashingtonDC,
   apiKey_OpenWeatherMaps,
   /*mapApiUrlRoot,*/
   currentWeatherApiUrlRoot,

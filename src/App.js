@@ -1,8 +1,11 @@
 import React from "react";
+import CitySelectMenu from "./components/CitySelectMenu";
 import CurrentWeather from "./components/CurrentWeather";
 import WeatherForecast from "./components/WeatherForecast";
 import cities from "./data/city.list.json";
 import {
+  US,
+  cityId_WashingtonDC,
   currentWeatherApiUrlRoot,
   weatherForecastApiUrlRoot,
   apiKey_OpenWeatherMaps
@@ -11,23 +14,34 @@ import styles from "./App.scss";
 
 class App extends React.Component {
   state = {
+    countryCode: US,
+    citiesByCountry: [],
+    selectedCityId: cityId_WashingtonDC,
     currentWeather: {},
     weatherForecast: {},
     currentWeatherDataLoaded: false,
     weatherForecastDataLoaded: false
   };
 
+  filterCitiesByCountry() {
+    const { countryCode } = this.state;
+    const citiesByCountry = cities.filter(city => city.country === countryCode);
+    console.log(citiesByCountry);
+    this.setState({ citiesByCountry });
+  }
+
   async fetchApiData() {
+    const { selectedCityId } = this.state;
     const currentWeatherApiUrl =
       currentWeatherApiUrlRoot +
       "?id=" +
-      2172797 +
+      selectedCityId +
       "&appid=" +
       apiKey_OpenWeatherMaps;
     const weatherForecastApiUrl =
       weatherForecastApiUrlRoot +
       "?id=" +
-      2172797 +
+      selectedCityId +
       "&mode=json&appid=" +
       apiKey_OpenWeatherMaps;
     //console.log(`*************************************************`);
@@ -60,10 +74,11 @@ class App extends React.Component {
           weatherForecast
         });
       });
+
+    this.filterCitiesByCountry();
   }
 
   componentDidMount() {
-    console.log(cities);
     //console.log(`=================================================`);
     //console.log(`*** App: componentDidMount() ***`);
     //console.log(`-------------------------------------------------`);
@@ -73,7 +88,7 @@ class App extends React.Component {
     this.fetchApiData();
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
     //console.log(`=================================================`);
     //console.log(`*** App: componentDidUpdate() ***`);
     //console.log(`-------------------------------------------------`);
@@ -82,7 +97,15 @@ class App extends React.Component {
     //console.log(`=================================================`);
   }
 
+  onCitySelectMenuChange = evt => {
+    console.log(`onCitySelectMenuChange`);
+    console.log(evt.target.value);
+    const selectedCityId = evt.target.value;
+    this.setState({ selectedCityId }, () => this.fetchApiData());
+  };
+
   render() {
+    const { citiesByCountry, selectedCityId } = this.state;
     const {
       currentWeather,
       currentWeatherDataLoaded,
@@ -91,6 +114,11 @@ class App extends React.Component {
     } = this.state;
     return (
       <div className={styles.App}>
+        <CitySelectMenu
+          citiesByCountry={citiesByCountry}
+          selectedCityId={selectedCityId}
+          onChange={this.onCitySelectMenuChange}
+        />
         {currentWeatherDataLoaded && (
           <CurrentWeather currentWeather={currentWeather} />
         )}

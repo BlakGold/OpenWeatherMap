@@ -16,7 +16,11 @@ function WeatherForecast(props) {
             const weather = timeFrame.weather[0];
             const { main } = timeFrame;
             return (
-              <tr className={styles.timeFrame} key={timeFrame.dt}>
+              <tr
+                className={styles.timeFrame}
+                key={timeFrame.dt}
+                title={weather.description}
+              >
                 <td className={styles.time}>24:00</td>
                 <td className={styles.icon}>
                   <Icon
