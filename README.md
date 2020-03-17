@@ -7,5 +7,4 @@ Simply clone it, install, run, and select cities from the drop-down menu to get 
 # Getting Started
 
 `git pull`
-`yarn install`
-`yarn run`
+`yarn start`
