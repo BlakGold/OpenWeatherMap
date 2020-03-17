@@ -4,12 +4,12 @@
   @include dataPanelStyles;
   align-items: stretch;
 }
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 800px) {
   .dataPanel {
     margin-left: 0;
   }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .dataPanel {
     margin-top: 0;
   }
