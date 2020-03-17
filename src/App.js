@@ -1,6 +1,7 @@
 import React from "react";
 import CurrentWeather from "./components/CurrentWeather";
 import WeatherForecast from "./components/WeatherForecast";
+import cities from "./data/city.list.json";
 import {
   currentWeatherApiUrlRoot,
   weatherForecastApiUrlRoot,
@@ -62,6 +63,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    console.log(cities);
     //console.log(`=================================================`);
     //console.log(`*** App: componentDidMount() ***`);
     //console.log(`-------------------------------------------------`);
