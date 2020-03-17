@@ -26,7 +26,7 @@ class App extends React.Component {
   filterCitiesByCountry() {
     const { countryCode } = this.state;
     const citiesByCountry = cities.filter(city => city.country === countryCode);
-    console.log(citiesByCountry);
+    //console.log(citiesByCountry);
     this.setState({ citiesByCountry });
   }
 
@@ -67,7 +67,7 @@ class App extends React.Component {
       })
       .then(weatherForecast => {
         //console.log(`#################################################`);
-        //console.log(weatherForecast);
+        console.log(weatherForecast);
         //console.log(`#################################################`);
         this.setState({
           weatherForecastDataLoaded: true,
@@ -98,8 +98,8 @@ class App extends React.Component {
   }
 
   onCitySelectMenuChange = evt => {
-    console.log(`onCitySelectMenuChange`);
-    console.log(evt.target.value);
+    //console.log(`onCitySelectMenuChange`);
+    //console.log(evt.target.value);
     const selectedCityId = evt.target.value;
     this.setState({ selectedCityId }, () => this.fetchApiData());
   };

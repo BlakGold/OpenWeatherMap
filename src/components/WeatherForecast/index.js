@@ -15,13 +15,14 @@ function WeatherForecast(props) {
           {list.map(timeFrame => {
             const weather = timeFrame.weather[0];
             const { main } = timeFrame;
+            const DateTime = new Date(timeFrame.dt_txt);
             return (
               <tr
                 className={styles.timeFrame}
                 key={timeFrame.dt}
                 title={weather.description}
               >
-                <td className={styles.time}>24:00</td>
+                <td className={styles.time}>{timeFrame.dt_txt}</td>
                 <td className={styles.icon}>
                   <Icon
                     className={styles.icon}

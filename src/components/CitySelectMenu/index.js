@@ -1,10 +1,11 @@
 import React from "react";
+import styles from "./index.scss";
 
 function CitySelectMenu(props) {
   const { citiesByCountry, selectedCityId, onChange } = props;
 
   return (
-    <select value={selectedCityId} onChange={onChange}>
+    <select className={styles.menu} value={selectedCityId} onChange={onChange}>
       {citiesByCountry.map(city => {
         const fullCityName = `${city.name}, ${
           city.state ? `${city.state}, ` : ""
