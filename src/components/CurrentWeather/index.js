@@ -5,11 +5,6 @@ import styles from "./index.scss";
 
 function CurrentWeather(props) {
   const { currentWeather } = props;
-  console.log(`*************************************************`);
-  console.log(`currentWeather`);
-  console.log(currentWeather);
-  console.log(`*************************************************`);
-
   let { weather } = currentWeather;
   weather = weather[0];
   const { main } = currentWeather;
