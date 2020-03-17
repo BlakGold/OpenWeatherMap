@@ -6,6 +6,6 @@ Simply clone it, start it, and select cities from the drop-down menu to get the 
 
 # Getting Started
 
-1. `git pull`
+1. `git clone`
 2. `yarn start`
 3. Enjoy.
