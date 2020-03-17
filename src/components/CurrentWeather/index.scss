@@ -1,11 +1,7 @@
-$brown: #8d734a;
+@import "../../globals/styles.scss";
 
-.data {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 0;
-  padding: 0;
+.dataPanel {
+  @include dataPanelStyles;
 }
 
 .city {
@@ -13,5 +9,5 @@ $brown: #8d734a;
 }
 
 .temp {
-  font-size: 49px;
+  font-size: 70px;
 }

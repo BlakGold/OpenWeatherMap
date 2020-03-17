@@ -1,17 +1,45 @@
-.data {
-  display: flex;
-  flex-direction: column;
+@import "../../globals/styles.scss";
+
+.dataPanel {
+  @include dataPanelStyles;
   align-items: stretch;
-  border: 0;
-  padding: 0;
+}
+@media only screen and (min-width: 600px) {
+  .dataPanel {
+    margin-left: 0;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .dataPanel {
+    margin-top: 0;
+  }
+}
+
+.forecastTable {
+  background-color: $tableBackgroundColor;
+  border-collapse: collapse;
+  border-radius: 7px;
 }
 
 .timeFrame {
-  display: flex;
-  align-items: center;
+  cursor: pointer;
+}
+.timeFrame:hover {
+  background-color: $tableRowHoverBackgroundColor;
+}
+.timeFrame td {
+  padding: 7px;
+}
+
+.time {
+}
+
+.icon {
+}
+
+.description {
 }
 
 .temp {
-  font-size: 35px;
-  margin: 0 14px;
+  font-size: 21px;
 }

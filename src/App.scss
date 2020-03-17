@@ -12,3 +12,13 @@
   padding: 14px;
   overflow: auto;
 }
+
+@media only screen and (max-width: 600px) {
+  .App {
+    flex-direction: column;
+  }
+
+  .App > div {
+    flex: 1 0 auto;
+  }
+}

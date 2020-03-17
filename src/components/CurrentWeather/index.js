@@ -15,9 +15,10 @@ function CurrentWeather(props) {
   const { main } = currentWeather;
 
   return (
-    <div className={styles.data}>
+    <div className={styles.dataPanel}>
       <h1>
-        Current Weather:{" "}
+        Current Weather
+        <br />
         <span className={styles.city}>{currentWeather.name}</span>
       </h1>
       <div className={styles.description}>{weather.description}</div>

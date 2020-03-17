@@ -9,6 +9,7 @@ const weatherForecastApiUrlRoot =
   "https://api.openweathermap.org/data/2.5/forecast"; // ?q=London,us&mode=json&appid=
 
 const iconField = "{icon}";
+const icon2xField = "@2x";
 const iconUrlTemplate =
   "http://openweathermap.org/img/wn/" + iconField + "@2x.png";
 
@@ -18,5 +19,6 @@ export {
   currentWeatherApiUrlRoot,
   weatherForecastApiUrlRoot,
   iconField,
+  icon2xField,
   iconUrlTemplate
 };

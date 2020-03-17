@@ -11,23 +11,30 @@ function WeatherForecast(props) {
   console.log(weatherForecast);
   console.log(`*************************************************`);
   return (
-    <div className={styles.data}>
+    <div className={styles.dataPanel}>
       <h1>5-Day Weather Forecast</h1>
-      {list.map(timeFrame => {
-        const weather = timeFrame.weather[0];
-        const { main } = timeFrame;
-        return (
-          <div className={styles.timeFrame}>
-            <Icon
-              alt={weather.description}
-              title={weather.description}
-              icon={weather.icon}
-            />
-            {weather.description}
-            <div className={styles.temp}>{toFahrenheit(main.temp)}&deg;</div>
-          </div>
-        );
-      })}
+      <table className={styles.forecastTable}>
+        {list.map(timeFrame => {
+          const weather = timeFrame.weather[0];
+          const { main } = timeFrame;
+          return (
+            <tr className={styles.timeFrame}>
+              <td className={styles.time}>24:00</td>
+              <td className={styles.icon}>
+                <Icon
+                  className={styles.icon}
+                  alt={weather.description}
+                  title={weather.description}
+                  icon={weather.icon}
+                  small
+                />
+              </td>
+              <td className={styles.description}>{weather.description}</td>
+              <td className={styles.temp}>{toFahrenheit(main.temp)}&deg;</td>
+            </tr>
+          );
+        })}
+      </table>
     </div>
   );
 }

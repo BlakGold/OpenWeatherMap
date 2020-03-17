@@ -1,25 +1,14 @@
-$headingFontFamily: freight-big-pro, serif;
-$headingFontWeight: 700;
-$headingTextColor: rgb(74, 74, 74);
-$bodyFontFamily: freight-sans-pro, helvetica, sans-serif;
-$bodyFontWeight: 300;
-$bodyTextColor: rgb(17, 17, 17);
-
-@mixin headingFontStyles {
-  font-family: $headingFontFamily;
-  font-weight: $headingFontWeight;
-  color: $headingTextColor;
-}
-
-@mixin bodyFontStyles {
-  font-family: $bodyFontFamily;
-  font-weight: $bodyFontWeight;
-  color: $bodyTextColor;
-}
+@import "./globals/styles.scss";
 
 body {
   @include bodyFontStyles;
+  background: $washedYellow;
   margin: 0;
+}
+
+body,
+body * {
+  box-sizing: border-box;
 }
 
 h1,
