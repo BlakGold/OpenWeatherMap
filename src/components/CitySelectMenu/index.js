@@ -25,6 +25,7 @@ function CitySelectMenu(props) {
         const fullCityName = `${city.name}, ${
           city.state ? `${city.state}, ` : ""
         }${city.country}`;
+
         return (
           <option value={city.id} key={city.id}>
             {fullCityName}
