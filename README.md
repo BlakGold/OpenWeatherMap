@@ -6,6 +6,8 @@ Simply clone it, start it, and select cities from the drop-down menu to get the 
 
 # Getting Started
 
-1. `git clone`
-2. `yarn start`
-3. Enjoy.
+1. `git clone https://github.com/BlakGold/OpenWeatherMap.git`
+2. `cd OpenWeatherMap`
+3. `yarn install`
+4. `yarn start`
+5. Enjoy.
