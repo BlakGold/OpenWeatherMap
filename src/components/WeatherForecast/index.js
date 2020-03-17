@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 import Icon from "../Icon";
 import { toFahrenheit } from "../../globals/functions";
 import styles from "./index.scss";
@@ -15,14 +16,16 @@ function WeatherForecast(props) {
           {list.map(timeFrame => {
             const weather = timeFrame.weather[0];
             const { main } = timeFrame;
-            const DateTime = new Date(timeFrame.dt_txt);
+            const formattedDateTime = moment(timeFrame.dt_txt).format(
+              "ddd, MMM D, ha"
+            );
             return (
               <tr
                 className={styles.timeFrame}
                 key={timeFrame.dt}
                 title={weather.description}
               >
-                <td className={styles.time}>{timeFrame.dt_txt}</td>
+                <td className={styles.datetime}>{formattedDateTime}</td>
                 <td className={styles.icon}>
                   <Icon
                     className={styles.icon}
