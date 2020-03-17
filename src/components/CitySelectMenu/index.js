@@ -1,8 +1,10 @@
 import React from "react";
+import cities from "../../data/city.list.json";
 import styles from "./index.scss";
 
 function CitySelectMenu(props) {
-  const { citiesByCountry, selectedCityId, onChange } = props;
+  const { countryCode, selectedCityId, onChange } = props;
+  const citiesByCountry = cities.filter(city => city.country === countryCode);
 
   return (
     <select className={styles.menu} value={selectedCityId} onChange={onChange}>
