@@ -43,6 +43,10 @@ $dataPanelBorderColor: rgba(0, 0, 0, 0.21);
 
 /* Metadata */
 $metadata: rgb(210, 210, 210);
+@mixin metadata {
+  color: $metadata;
+  font-size: 14px;
+}
 
 /* Table */
 $tableBackgroundColor: transparent;
@@ -54,5 +58,6 @@ $iconBackgroundColor: #ffffff;
 /* Horizontal Rule */
 @mixin hrStyles {
   width: 100%;
+  margin: 14px 0;
   border-top: $lightGrey_transparent;
 }

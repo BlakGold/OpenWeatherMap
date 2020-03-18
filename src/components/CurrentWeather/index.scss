@@ -13,7 +13,7 @@
 }
 
 .wind {
-  color: $metadata;
+  @include metadata;
 }
 
 .hr {
