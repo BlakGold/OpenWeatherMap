@@ -1,6 +1,8 @@
+/* Temperature */
 const toCelsius = kelvin => kelvin - 273;
 const toFahrenheit = kelvin => Math.floor(toCelsius(kelvin) * (9 / 5) + 32);
 
+/* Wind */
 const getWindDirection = degrees => {
   const directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"]; // clockwise
   const degree_increment = 360 / 8;
