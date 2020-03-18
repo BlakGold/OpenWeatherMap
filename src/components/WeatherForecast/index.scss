@@ -21,13 +21,15 @@
 }
 
 .timeFrame {
+  padding: 0;
   cursor: pointer;
 }
 .timeFrame:hover {
   background-color: $tableRowHoverBackgroundColor;
 }
 .timeFrame td {
-  padding: 7px;
+  margin: 0;
+  padding: 0;
 }
 
 .datetime {
