@@ -1,6 +1,7 @@
 /* Colors */
 $brown: #8d734a;
 $washedYellow: #f9f8f6;
+$lightGrey_transparent: rgba(0, 0, 0, 0.07);
 
 /* Body */
 $bodyFontFamily: freight-sans-pro, helvetica, sans-serif;
@@ -37,12 +38,18 @@ $dataPanelBorderColor: rgba(0, 0, 0, 0.21);
   padding: 14px;
   background: $dataPanelBackgroundColor;
   border: 1px solid $dataPanelBorderColor;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.07);
+  box-shadow: 1px 1px 3px $lightGrey_transparent;
 }
 
 /* Table */
 $tableBackgroundColor: transparent;
-$tableRowHoverBackgroundColor: rgba(0, 0, 0, 0.07);
+$tableRowHoverBackgroundColor: $lightGrey_transparent;
 
 /* Icon */
 $iconBackgroundColor: #ffffff;
+
+/* Horizontal Rule */
+@mixin hrStyles {
+  width: 100%;
+  border-top: $lightGrey_transparent;
+}

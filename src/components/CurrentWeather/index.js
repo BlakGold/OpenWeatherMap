@@ -23,6 +23,7 @@ function CurrentWeather(props) {
         icon={weather.icon}
       />
       <div className={styles.temp}>{toFahrenheit(main.temp)}&deg;</div>
+      <hr className={styles.hr} />
     </div>
   );
 }

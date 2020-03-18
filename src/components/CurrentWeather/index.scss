@@ -11,3 +11,7 @@
 .temp {
   font-size: 70px;
 }
+
+.hr {
+  @include hrStyles;
+}
