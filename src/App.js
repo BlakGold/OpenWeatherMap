@@ -44,10 +44,15 @@ class App extends React.Component {
         return response.json();
       })
       .then(currentWeather => {
-        this.setState({
-          currentWeatherDataLoaded: true,
-          currentWeather
-        });
+        this.setState(
+          {
+            currentWeatherDataLoaded: true,
+            currentWeather
+          },
+          () => {
+            console.log(currentWeather);
+          }
+        );
       });
 
     await fetch(weatherForecastApiUrl)

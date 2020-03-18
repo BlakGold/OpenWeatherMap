@@ -12,6 +12,10 @@
   font-size: 70px;
 }
 
+.wind {
+  color: $metadata;
+}
+
 .hr {
   @include hrStyles;
 }

@@ -1,13 +1,13 @@
 import React from "react";
 import Icon from "../Icon";
-import { toFahrenheit } from "../../globals/functions";
+import { toFahrenheit, getWindDirection } from "../../globals/functions";
 import styles from "./index.scss";
 
 function CurrentWeather(props) {
   const { currentWeather } = props;
   let { weather } = currentWeather;
   weather = weather[0];
-  const { main } = currentWeather;
+  const { main, wind } = currentWeather;
 
   return (
     <div className={styles.dataPanel}>
@@ -24,6 +24,9 @@ function CurrentWeather(props) {
       />
       <div className={styles.temp}>{toFahrenheit(main.temp)}&deg;</div>
       <hr className={styles.hr} />
+      <div className={styles.wind}>
+        wind: {getWindDirection(wind.deg)} {wind.speed} mph
+      </div>
     </div>
   );
 }
