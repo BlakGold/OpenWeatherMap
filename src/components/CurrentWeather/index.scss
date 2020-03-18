@@ -9,6 +9,7 @@
 }
 
 .description {
+  @include description;
 }
 
 .temp {
@@ -17,7 +18,7 @@
 }
 
 .dayHiLo {
-  @include metadata;
+  @include description;
   display: flex;
   width: 100%;
   align-items: baseline;
@@ -26,7 +27,6 @@
 
 .day {
   flex: 3 0 auto;
-  font-size: 17px;
 }
 
 .hi {

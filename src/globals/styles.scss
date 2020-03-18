@@ -1,4 +1,7 @@
 /* Colors */
+$grey: rgb(140, 140, 140);
+$midGrey: rgb(74, 74, 74);
+$darkGrey: rgb(17, 17, 17);
 $brown: #8d734a;
 $washedYellow: #f9f8f6;
 $lightGrey_transparent: rgba(0, 0, 0, 0.07);
@@ -6,7 +9,7 @@ $lightGrey_transparent: rgba(0, 0, 0, 0.07);
 /* Body */
 $bodyFontFamily: freight-sans-pro, helvetica, sans-serif;
 $bodyFontWeight: 300;
-$bodyTextColor: rgb(17, 17, 17);
+$bodyTextColor: $darkGrey;
 
 @mixin bodyFontStyles {
   font-family: $bodyFontFamily;
@@ -17,7 +20,7 @@ $bodyTextColor: rgb(17, 17, 17);
 /* Headings */
 $headingFontFamily: freight-big-pro, serif;
 $headingFontWeight: 700;
-$headingTextColor: rgb(74, 74, 74);
+$headingTextColor: $midGrey;
 
 @mixin headingFontStyles {
   font-family: $headingFontFamily;
@@ -41,10 +44,15 @@ $dataPanelBorderColor: rgba(0, 0, 0, 0.21);
   box-shadow: 1px 1px 3px $lightGrey_transparent;
 }
 
+/* Description */
+@mixin description {
+  color: $midGrey;
+  font-size: 21px;
+}
+
 /* Metadata */
-$metadata: rgb(140, 140, 140);
 @mixin metadata {
-  color: $metadata;
+  color: $grey;
   font-size: 14px;
 }
 
