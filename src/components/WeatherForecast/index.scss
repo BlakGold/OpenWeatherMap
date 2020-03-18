@@ -18,6 +18,7 @@
 .forecastTable {
   background-color: $tableBackgroundColor;
   border-collapse: collapse;
+  font-size: $fontSize_small;
 }
 
 .timeFrame {
@@ -43,10 +44,10 @@
 }
 
 .description {
-  width: $panelRatio_L;
+  width: 35%;
 }
 
 .temp {
-  font-size: 21px;
+  font-size: $fontSize_mid;
   text-align: right;
 }

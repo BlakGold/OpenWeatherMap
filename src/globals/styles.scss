@@ -6,6 +6,11 @@ $brown: #8d734a;
 $washedYellow: #f9f8f6;
 $lightGrey_transparent: rgba(0, 0, 0, 0.07);
 
+/* Fonts */
+$fontSize_small: 14px;
+$fontSize_mid: 21px;
+$fontSize_large: 70px;
+
 /* Qualities */
 $panelRatio_L: 42%;
 $panelRatio_R: 58%;
@@ -53,13 +58,13 @@ $dataPanelBorderColor: rgba(0, 0, 0, 0.21);
 /* Description */
 @mixin description {
   color: $midGrey;
-  font-size: 21px;
+  font-size: $fontSize_mid;
 }
 
 /* Metadata */
 @mixin metadata {
   color: $grey;
-  font-size: 14px;
+  font-size: $fontSize_small;
 }
 
 /* Table */
