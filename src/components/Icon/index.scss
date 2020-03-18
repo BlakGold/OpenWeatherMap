@@ -1,8 +1,8 @@
 @import "../../globals/styles.scss";
 
 .icon {
-  width: 100px;
-  height: 100px;
+  width: $iconSize;
+  height: $iconSize;
   margin: 7px;
   background-color: $iconBackgroundColor;
   border-radius: 50%;
@@ -10,7 +10,7 @@
 }
 
 .small {
-  width: 50px;
-  height: 50px;
+  width: $iconSize_small;
+  height: $iconSize_small;
   margin: 0;
 }
