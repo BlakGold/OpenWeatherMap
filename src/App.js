@@ -35,7 +35,8 @@ class App extends React.Component {
       weatherForecastApiUrlRoot +
       "?id=" +
       selectedCityId +
-      "&mode=json&appid=" +
+      "&mode=json" +
+      "&appid=" +
       apiKey_OpenWeatherMaps;
 
     await fetch(currentWeatherApiUrl)
