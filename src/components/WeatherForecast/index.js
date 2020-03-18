@@ -10,7 +10,7 @@ function WeatherForecast(props) {
 
   return (
     <div className={styles.dataPanel}>
-      <h1>5-Day Weather Forecast</h1>
+      <h2>5-Day Weather Forecast</h2>
       <table className={styles.forecastTable}>
         <tbody>
           {list.map(timeFrame => {
