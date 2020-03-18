@@ -35,14 +35,14 @@
   flex: 3 0 auto;
 }
 
-.hi {
+.hi,
+.lo {
   flex: 1 1 auto;
   text-align: right;
 }
 
-.lo {
-  flex: 1 1 auto;
-  text-align: right;
+.hiLoLabel {
+  @include metadata;
 }
 
 .hr {

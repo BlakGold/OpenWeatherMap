@@ -31,10 +31,12 @@ function CurrentWeather(props) {
       <div className={styles.dayHiLo}>
         <div className={styles.day}>{day}</div>
         <div className={styles.hi}>
-          high: <Temperature kelvin={main.temp_max} />
+          <span className={styles.hiLoLabel}>high:</span>{" "}
+          <Temperature kelvin={main.temp_max} />
         </div>
         <div className={styles.lo}>
-          low: <Temperature kelvin={main.temp_min} />
+          <span className={styles.hiLoLabel}>low:</span>{" "}
+          <Temperature kelvin={main.temp_min} />
         </div>
       </div>
       <hr className={styles.hr} />
