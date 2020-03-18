@@ -3,8 +3,10 @@
 .icon {
   width: 100px;
   height: 100px;
+  margin: 7px;
   background-color: $iconBackgroundColor;
   border-radius: 50%;
+  box-shadow: $shadow;
 }
 
 .small {
