@@ -29,16 +29,21 @@
 }
 .timeFrame td {
   margin: 0;
-  padding: 0;
+  padding: 7px 0;
 }
 
 .datetime {
+  width: $panelRatio_L;
 }
 
 .icon {
+  width: 70px;
+  text-align: center;
 }
 
 .description {
+  width: $panelRatio_L;
+  padding-left: 7px !important;
 }
 
 .temp {
