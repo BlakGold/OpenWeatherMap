@@ -42,7 +42,7 @@ $dataPanelBorderColor: rgba(0, 0, 0, 0.21);
 }
 
 /* Metadata */
-$metadata: rgb(210, 210, 210);
+$metadata: rgb(140, 140, 140);
 @mixin metadata {
   color: $metadata;
   font-size: 14px;
