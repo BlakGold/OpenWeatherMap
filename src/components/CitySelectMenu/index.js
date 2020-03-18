@@ -22,9 +22,9 @@ function CitySelectMenu(props) {
   return (
     <select className={styles.menu} value={selectedCityId} onChange={onChange}>
       {filteredCities.map(city => {
-        const fullCityName = `${city.name}, ${
-          city.state ? `${city.state}, ` : ""
-        }${city.country}`;
+        const fullCityName = `${city.name}${
+          city.state ? `, ${city.state}` : ""
+        }${city.country === US ? "" : `, ${city.country}`}`;
 
         return (
           <option value={city.id} key={city.id}>
