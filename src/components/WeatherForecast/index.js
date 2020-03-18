@@ -1,7 +1,7 @@
 import React from "react";
 import moment from "moment";
 import Icon from "../Icon";
-import { toFahrenheit } from "../../globals/functions";
+import Temperature from "../Temperature";
 import styles from "./index.scss";
 
 function WeatherForecast(props) {
@@ -36,7 +36,9 @@ function WeatherForecast(props) {
                   />
                 </td>
                 <td className={styles.description}>{weather.description}</td>
-                <td className={styles.temp}>{toFahrenheit(main.temp)}&deg;</td>
+                <td className={styles.temp}>
+                  <Temperature kelvin={main.temp} />
+                </td>
               </tr>
             );
           })}
