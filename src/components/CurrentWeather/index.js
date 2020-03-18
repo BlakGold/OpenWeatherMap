@@ -10,9 +10,7 @@ function CurrentWeather(props) {
   let { weather } = currentWeather;
   weather = weather[0];
   const { main, wind } = currentWeather;
-  const day = moment()
-    .format("dddd")
-    .toUpperCase();
+  const day = moment().format("dddd");
 
   return (
     <div className={styles.dataPanel}>

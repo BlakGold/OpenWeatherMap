@@ -8,14 +8,41 @@
   color: $brown;
 }
 
+.description {
+}
+
 .temp {
+  margin-bottom: 35px;
   font-size: 70px;
 }
 
-.wind {
+.dayHiLo {
   @include metadata;
+  display: flex;
+  width: 100%;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.day {
+  flex: 3 0 auto;
+  font-size: 17px;
+}
+
+.hi {
+  flex: 1 1 auto;
+  text-align: right;
+}
+
+.lo {
+  flex: 1 1 auto;
+  text-align: right;
 }
 
 .hr {
   @include hrStyles;
+}
+
+.wind {
+  @include metadata;
 }
