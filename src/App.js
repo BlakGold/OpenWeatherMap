@@ -42,7 +42,9 @@ class App extends React.Component {
     const currentWeather = fetch(currentWeatherApiUrl);
     const weatherForecast = fetch(weatherForecastApiUrl);
 
-    Promise.all([currentWeather, weatherForecast])
+    const promises = [currentWeather, weatherForecast];
+
+    Promise.all(promises)
       .then(response => {
         return Promise.all(response.map(r => r.json()));
       })
