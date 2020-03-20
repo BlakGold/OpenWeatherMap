@@ -3,11 +3,11 @@ import CitySelectMenu from "./components/CitySelectMenu";
 import CurrentWeather from "./components/CurrentWeather";
 import WeatherForecast from "./components/WeatherForecast";
 import {
-  US,
-  cityId_WashingtonDC,
+  apiKey_OpenWeatherMaps,
   currentWeatherApiUrlRoot,
   weatherForecastApiUrlRoot,
-  apiKey_OpenWeatherMaps
+  US,
+  cityId_WashingtonDC
 } from "./globals/constants";
 import styles from "./App.scss";
 
