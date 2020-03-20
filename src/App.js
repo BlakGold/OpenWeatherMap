@@ -21,7 +21,7 @@ class App extends React.Component {
     weatherForecastDataLoaded: false
   };
 
-  async fetchApiData() {
+  fetchApiData() {
     const { selectedCityId } = this.state;
 
     const currentWeatherApiUrl =
@@ -42,27 +42,21 @@ class App extends React.Component {
     const currentWeather = fetch(currentWeatherApiUrl);
     const weatherForecast = fetch(weatherForecastApiUrl);
 
-    await currentWeather
+    Promise.all([currentWeather, weatherForecast])
       .then(response => {
-        return response.json();
+        return Promise.all(response.map(r => r.json()));
       })
-      .then(currentWeather => {
+      .then(json => {
+        const currentWeather = json[0];
+        const weatherForecast = json[1];
         this.setState({
           currentWeatherDataLoaded: true,
-          currentWeather
-        });
-      });
-
-    await weatherForecast
-      .then(response => {
-        return response.json();
-      })
-      .then(weatherForecast => {
-        this.setState({
+          currentWeather,
           weatherForecastDataLoaded: true,
           weatherForecast
         });
-      });
+      })
+      .catch(err => console.log(err));
   }
 
   componentDidMount() {
