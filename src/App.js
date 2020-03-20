@@ -52,6 +52,7 @@ class App extends React.Component {
           currentWeather
         });
       });
+
     await weatherForecast
       .then(response => {
         return response.json();
