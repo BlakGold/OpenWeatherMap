@@ -39,7 +39,10 @@ class App extends React.Component {
       "&appid=" +
       apiKey_OpenWeatherMaps;
 
-    await fetch(currentWeatherApiUrl)
+    const currentWeather = fetch(currentWeatherApiUrl);
+    const weatherForecast = fetch(weatherForecastApiUrl);
+
+    await currentWeather
       .then(response => {
         return response.json();
       })
@@ -49,8 +52,7 @@ class App extends React.Component {
           currentWeather
         });
       });
-
-    await fetch(weatherForecastApiUrl)
+    await weatherForecast
       .then(response => {
         return response.json();
       })
