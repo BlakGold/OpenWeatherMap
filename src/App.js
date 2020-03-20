@@ -28,6 +28,7 @@ class App extends React.Component {
       currentWeatherApiUrlRoot +
       "?id=" +
       selectedCityId +
+      "&mode=json" +
       "&appid=" +
       apiKey_OpenWeatherMaps;
 
