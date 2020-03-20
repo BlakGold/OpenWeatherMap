@@ -51,6 +51,7 @@ class App extends React.Component {
       .then(json => {
         const currentWeather = json[0];
         const weatherForecast = json[1];
+
         this.setState({
           currentWeatherDataLoaded: true,
           currentWeather,
