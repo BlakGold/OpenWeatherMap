@@ -48,10 +48,7 @@ class App extends React.Component {
       .then(response => {
         return Promise.all(response.map(r => r.json()));
       })
-      .then(json => {
-        const currentWeather = json[0];
-        const weatherForecast = json[1];
-
+      .then(([currentWeather, weatherForecast]) => {
         this.setState({
           currentWeatherDataLoaded: true,
           currentWeather,
